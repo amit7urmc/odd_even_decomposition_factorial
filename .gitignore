@@ -1,0 +1,22 @@
+# Whitelist approach: ignore everything by default, then explicitly
+# allow only the file types we want tracked for this paper's repo
+# (source .tex, compiled .pdf, supporting .py script, and .csv data).
+# This keeps LaTeX build artifacts (.aux, .log, .synctex.gz, .out,
+# .toc, .fdb_latexmk, .fls, etc.) and any other clutter out of git
+# without having to list every possible junk extension by name.
+
+# Ignore everything
+*
+
+# But still walk into directories, so allowed files inside
+# subfolders (if any get added later) are not skipped
+!*/
+
+# Allow only these file types
+!*.pdf
+!*.tex
+!*.py
+!*.csv
+
+# Keep this .gitignore itself tracked
+!.gitignore
